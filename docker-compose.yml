@@ -15,13 +15,13 @@ services:
   server:
     build: ./backend
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       DB_HOST: db
       DB_NAME: fintrellis_blog
       DB_USER: blog_admin
       DB_PASS: blog_admin
-      PORT: 3000
+      PORT: 3001
     depends_on:
       - db
 
