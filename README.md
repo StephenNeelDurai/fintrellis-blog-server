@@ -24,7 +24,6 @@ A full-stack web application to create, view, update and delete blog posts. The 
 
 ### 1. Clone Repository
     git clone https://github.com/StephenNeelDurai/fintrellis-blog-server.git
-    cd blog-post-manager
 
 ### 2. Create Database
     -- 1. Create Database
@@ -41,17 +40,24 @@ A full-stack web application to create, view, update and delete blog posts. The 
     GRANT ALL PRIVILEGES ON SCHEMA public TO blog_admin;
 
 
-### 3. Install Packages
+### 3. Install Packages And Start Server
+    cd blog-post-manager/server
     npm install
     npm run dev
 
-### 4. 🧪 Testing
+### 5. 🧪 Testing Server
     npm test
 
-### 5. 🐳 Docker Setup (Optional)
+### 6. Install Packages And Start Frontend App
+    cd blog-post-manager/frontend
+    npm install
+    npm run start
+
+
+### 7. 🐳 Docker Setup (Optional)
 
 #### Build and start container
-    docker-compose up --build -d
+    docker-compose up --build --remove-orphans -d
 #### Check logs
     docker-compose logs -f
 #### Stop and remove
