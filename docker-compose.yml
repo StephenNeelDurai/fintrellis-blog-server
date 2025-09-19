@@ -12,8 +12,8 @@ services:
     ports:
       - "5432:5432"
 
-  app:
-    build: .
+  server:
+    build: ./backend
     ports:
       - "3000:3000"
     environment:
