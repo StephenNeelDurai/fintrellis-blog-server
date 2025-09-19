@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: blog_admin
+      POSTGRES_PASSWORD: blog_admin
+      POSTGRES_DB: fintrellis_blog
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_NAME: fintrellis_blog
+      DB_USER: blog_admin
+      DB_PASS: blog_admin
+      PORT: 3000
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
